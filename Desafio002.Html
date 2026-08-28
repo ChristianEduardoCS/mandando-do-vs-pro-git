@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+
+
+
+        }
+
+        form {
+            background-color: rgb(203, 240, 255);
+            width: 400px;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 0 10px 0 rgb(104, 104, 255);
+            padding-bottom: 5px;
+        }
+
+        #titulo {
+            text-align: center;
+            padding: 5px;
+            margin-bottom: 10px;
+            font-size: 50px;
+        }
+
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+
+        label {
+
+            display: block;
+            padding: auto;
+
+
+        }
+
+        input {
+            margin-bottom: 10%;
+            padding: 5px 140px 5px 0;
+            border-radius: 20px;
+        }
+
+        #botao {
+            padding: 10px 140px 10px 140px;
+            background-color: rgb(9, 105, 230);
+            border-radius: 40px;
+            color: aliceblue;
+            cursor: pointer;
+            border: none;
+
+        }
+
+        #botao:hover {
+            background-color: rgb(8, 97, 180);
+
+        }
+
+        #email {
+            border: 5px;
+            padding-left: 10px;
+        }
+
+        #senha {
+            border: 5px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <form id="formulario">
+
+
+        <H1 id="titulo">Login</H1>
+
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" required>
+
+
+        <input type="submit" value="Login" id="botao">
+
+
+    </form>
+
+    <script>
+        let senhaCorreta = 1234
+        let emailCorreto = "teste@gmail.com"
+let form = document.getElementById('formulario')
+
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault()
+            console.log("O FORM FOI ENVIADO!")
+
+      let email = document.getElementById(`email`).value    
+      let senha = Number(document.getElementById(`senha`).value)
+            
+ if (email == emailCorreto && senha === senhaCorreta) {
+            alert(`Olá  Seu formulario foi enviado com sucesso!`)
+            window.location.href = 'logada.html'
+
+        }
+        else {
+            alert("Dados incorrettos.")
+        }
+        })
+
+       
+    </script>
+</body>
+
+</html>
